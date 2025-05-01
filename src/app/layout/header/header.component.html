@@ -1,0 +1,30 @@
+<div class="container-header">
+    <div class="brubank-logo">
+        <img class="logo-header" src="assets/media/logo/brubank-logo-letter.png" alt="">
+    </div>
+    <div class="router-content" [ngClass]="{'active' : true}">
+        <a class="router-text" (mouseenter)="showMegaMenu = true" (mouseleave)="showMegaMenu = false">
+            Personas
+        </a>
+        <div *ngIf="showMegaMenu" [ngTemplateOutlet]="personalSubmenu"></div>
+    </div>
+    <div class="router-content">
+        <a class="router-text">Empresas</a>
+    </div>
+    <div class="router-content">
+        <a class="router-text">Ayuda</a>
+    </div>
+    <div class="router-content background-router">
+        <a class="router-text">Robo y extravío</a>
+    </div>
+    <div class="router-content">
+        <a class="router-text downloand me-1">Descargar app</a>
+        <span class="downloand-fill" [inlineSVG]="'assets/media/header/downloand.svg'"></span>
+    </div>
+</div>
+
+<ng-template #personalSubmenu>
+    <div class="mega-menu-container">
+        <h1>Hola</h1>
+    </div>
+</ng-template>

@@ -1,0 +1,85 @@
+@use "../../../assets/sass/base.scss" as *;
+
+/* #83B6E2 Me gusto el color */
+
+.container-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo-header{
+    width: 140px;
+    object-fit: contain;
+}
+
+.router-content{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+}
+
+.router-content.active{
+    border-bottom: 2px solid $color-primary;
+
+    .router-text{
+        color: $color-primary;
+    }
+}
+
+.router-content.background-router{
+    height: 75%;
+    background-color: #4b38ad1a;
+    border-radius: 16px;
+    transition: ease-in-out 0.3s;
+}
+
+.router-content.background-router:hover{
+    background-color: $color-primary;
+
+    .router-text{
+        color: white;
+    }
+}
+
+::ng-deep .router-content:hover{
+    border-bottom: 2px solid $color-primary;
+
+    .downloand{
+        color: $color-primary;
+    }
+
+    .downloand-fill svg{
+        color: $color-primary;
+    }
+}
+
+.router-text{
+    font-size: 16px;
+    color: $color-secondary;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.router-text.active{
+    color: $color-primary;
+}
+
+::ng-deep .downloand-fill svg{
+    color: $color-secondary;
+}
+
+.mega-menu-container{
+    display: flex;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+}
+
+.mega-menu{
+    padding: 2rem;
+}
