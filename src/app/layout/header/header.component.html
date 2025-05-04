@@ -2,14 +2,19 @@
     <div class="brubank-logo">
         <img class="logo-header" src="assets/media/logo/brubank-logo-letter.png" alt="">
     </div>
-    <div class="router-content" [ngClass]="{'active' : true}">
-        <a class="router-text" (mouseenter)="showMegaMenu = true" (mouseleave)="showMegaMenu = false">
+    <div class="router-content" [ngClass]="{'active' : true}" (mouseenter)="mouseEventSubMenu('enter', SubMenuItem.PERSONAS)" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
+        <a class="router-text">
             Personas
         </a>
-        <div *ngIf="showMegaMenu" [ngTemplateOutlet]="personalSubmenu"></div>
+        <div *ngIf="showMegaMenu">
+            <ng-container [ngTemplateOutlet]="personalSubmenu"></ng-container>
+        </div>
     </div>
-    <div class="router-content">
-        <a class="router-text">Empresas</a>
+    <div class="router-content" (mouseenter)="mouseEventSubMenu('enter', SubMenuItem.COMPANY)" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
+        <a class="router-text">
+            Empresas
+        </a>
+        <div *ngIf="showMegaMenuCompany" [ngTemplateOutlet]="companySubMenu"></div>
     </div>
     <div class="router-content">
         <a class="router-text">Ayuda</a>
@@ -24,7 +29,109 @@
 </div>
 
 <ng-template #personalSubmenu>
-    <div class="mega-menu-container">
-        <h1>Hola</h1>
+    <div class="mega-menu-container" (mouseleave)="mouseEventSubMenu('leave',SubMenuItem.PERSONAS)">
+        <div class="w-50 d-flex align-items-center mb-3">
+            <h3 class="submenu-title me-2">Pensando para vos</h3>
+            <img class="submenu-emoji" src="assets/media/header/emoji-estrellas.jpg" alt="" />
+        </div>
+        <div class="row g-0">
+            <div class="col-2-5">
+                <span class="submenu-subtitle">Facilidades</span>
+                <ul class="submenu-ul">
+                    <li class="submenu-li">Préstamos y adelantos</li>
+                    <li class="submenu-li">Cuentas Sueldo</li>
+                    <li class="submenu-li">BruPlus</li>
+                    <li class="submenu-li">Transferencia</li>
+                    <li class="submenu-li">Depósito y extracciones</li>
+                    <li class="submenu-li">Asistencia al viajero</li>
+                    <li class="submenu-li">Seguros</li>
+                    <li class="submenu-li">Préstamos Hipotecarios</li>
+                    <li class="submenu-li">UVA</li>
+                </ul>
+            </div>
+            <div class="col-2-5">
+                <span class="submenu-subtitle">Pagos</span>
+                <ul class="submenu-ul">
+                    <li class="submenu-li">Pago QR</li>
+                    <li class="submenu-li">Pago de servicios</li>
+                    <li class="submenu-li">Tarjeta de crédito</li>
+                    <li class="submenu-li">Pago Google Play</li>
+                    <li class="submenu-li">Pago Apple Pay</li>
+                </ul>
+            </div>
+            <div class="col-2-5">
+                <span class="submenu-subtitle">Inversiones</span>
+                <ul class="submenu-ul">
+                    <li class="submenu-li">Caja de ahorro USD</li>
+                    <li class="submenu-li">Dólar Oficial</li>
+                    <li class="submenu-li">Dólar MEP</li>
+                    <li class="submenu-li">Fondos Comunes de Inversión</li>
+                    <li class="submenu-li">CEDEARs</li>
+                </ul>
+            </div>
+            <div class="col-2-5">
+                <span class="submenu-subtitle">Seguridad</span>
+                <ul class="submenu-ul">
+                    <li class="submenu-li">Recomendaciones</li>
+                    <li class="submenu-li">Pausar tarjeta</li>
+                    <li class="submenu-li">Biometría</li>
+                    <li class="submenu-li">Caja de seguridad</li>
+                </ul>
+            </div>
+            <div class="col-2-5">
+                <div class="content-extra">
+                    <span>Beneficios</span>
+                </div>
+                <div class="content-extra">
+                    <span>Soporte 24/7</span>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</ng-template>
+
+<ng-template #companySubMenu>
+    <div class="mega-menu-container company" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
+        <div class="w-75 d-flex align-items-center mb-3">
+            <h3 class="submenu-title me-2">Pensando para tu desarrollo</h3>
+            <img class="submenu-emoji" src="assets/media/header/emoji-portafolio.png" alt="" />
+        </div>
+        <div class="row g-0">
+            <div class="col-4">
+                <div class="d-flex">
+                    <span class="submenu-subtitle me-2">Pymes</span>
+                    <div class="content-extra new">
+                        <span>Nuevo</span>
+                    </div>
+                </div>
+                <ul class="submenu-ul">
+                    <li class="submenu-li">Apertura de cuenta</li>
+                    <li class="submenu-li">Asesoria personal</li>
+                    <li class="submenu-li">Cobros</li>
+                    <li class="submenu-li">Cuenta remunerada</li>
+                    <li class="submenu-li">Pagos</li>
+                    <li class="submenu-li">Tarjeta de crédito corporativa</li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <span class="submenu-subtitle">Mi Negocio</span>
+                <ul class="submenu-ul">
+                    <li class="submenu-li">Cobros con QR</li>
+                    <li class="submenu-li">Cobros con terminal</li>
+                    <li class="submenu-li">Comisiones</li>
+                    <li class="submenu-li">Cuenta gratuita</li>
+                    <li class="submenu-li">Quiero que me contacten</li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <div class="content-extra">
+                    <span>Abrir cuenta empresa</span>
+                </div>
+                <div class="content-extra">
+                    <span>Ingresar cuenta empresa</span>
+                </div>
+            </div>
+        </div> 
     </div>
 </ng-template>
