@@ -6,9 +6,7 @@
         <a class="router-text">
             Personas
         </a>
-        <div *ngIf="showMegaMenu">
-            <ng-container [ngTemplateOutlet]="personalSubmenu"></ng-container>
-        </div>
+        <div *ngIf="this.showMegaMenu" [ngTemplateOutlet]="personalSubmenu"></div>
     </div>
     <div class="router-content" (mouseenter)="mouseEventSubMenu('enter', SubMenuItem.COMPANY)" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
         <a class="router-text">
@@ -20,7 +18,7 @@
         <a class="router-text">Ayuda</a>
     </div>
     <div class="router-content background-router">
-        <a class="router-text">Robo y extravío</a>
+        <a class="router-text color-primary">Robo y extravío</a>
     </div>
     <div class="router-content">
         <a class="router-text downloand me-1">Descargar app</a>
@@ -29,7 +27,7 @@
 </div>
 
 <ng-template #personalSubmenu>
-    <div class="mega-menu-container" (mouseleave)="mouseEventSubMenu('leave',SubMenuItem.PERSONAS)">
+    <div class="mega-menu-container dropdown-menu" (mouseleave)="mouseEventSubMenu('leave',SubMenuItem.PERSONAS)">
         <div class="w-50 d-flex align-items-center mb-3">
             <h3 class="submenu-title me-2">Pensando para vos</h3>
             <img class="submenu-emoji" src="assets/media/header/emoji-estrellas.jpg" alt="" />
@@ -92,7 +90,7 @@
 </ng-template>
 
 <ng-template #companySubMenu>
-    <div class="mega-menu-container company" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
+    <div class="mega-menu-container company dropdown-menu" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
         <div class="w-75 d-flex align-items-center mb-3">
             <h3 class="submenu-title me-2">Pensando para tu desarrollo</h3>
             <img class="submenu-emoji" src="assets/media/header/emoji-portafolio.png" alt="" />

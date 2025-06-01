@@ -13,7 +13,7 @@
         </div>
         <div class="col-6">
             <div class="content-image-animation">
-                <div class="first-animation">
+                <div class="first-animation" [ngClass]="{'show' : this.firstAnimation, 'hide' : !this.firstAnimation}">
                     <div class="">
                         <img class="image-2" src="assets/media/presentation-bank/image-2.png" alt="">
                     </div>
@@ -27,7 +27,7 @@
                         <img class="image-3"src="assets/media/presentation-bank/image-3.png" alt="">
                     </div>
                 </div>
-                <div class="first-animation" *ngIf="secondAnimation">
+                <div class="first-animation" [ngClass]="{'show' : this.secondAnimation, 'hide' : !this.secondAnimation}">
                     <div class="">
                         <img class="image-2" src="assets/media/presentation-bank/image-2.png" alt="">
                     </div>
@@ -35,10 +35,10 @@
                         <img class="image-4" src="assets/media/presentation-bank/image-4.webp" alt="">
                     </div>
                     <div class="">
-                        <img class="image-1" src="assets/media/presentation-bank/image-1.png" alt="">
+                        <img class="image-1" src="assets/media/presentation-bank/image-6.webp" alt="">
                     </div>
                     <div class="">
-                        <img class="image-3"src="assets/media/presentation-bank/image-3.png" alt="">
+                        <img class="image-3"src="assets/media/presentation-bank/image-5.png" alt="">
                     </div>
                 </div>
             </div>
