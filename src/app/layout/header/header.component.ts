@@ -15,6 +15,7 @@ export enum SubMenuItem{
 })
 export class HeaderComponent implements OnInit {
 
+
   showMegaMenu : boolean = false;
   showMegaMenuCompany : boolean = false;
 
