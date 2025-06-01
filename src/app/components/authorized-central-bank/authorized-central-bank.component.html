@@ -1,0 +1,32 @@
+<div class="container-authorized-central-bank mb-5">
+  <div class="d-flex justify-content-center">
+    <img class="img-bank-central" src="assets/media/authorized-central-bank/central-bank.png" alt="" />
+  </div>
+  <div class="d-flex flex-column">
+    <h2 class="text-center font-family-inter">Authorizado por el Banco Central</h2>
+    <span class="text-center color-gray">Somos el primer banco digital argentino regulado por el BCRA.</span>
+    <div class="d-flex justify-content-center mt-4">
+      <div class="w-30">
+        <button class="btn btn-primary-bank">Abrir cuenta gratis y mantenela sin costo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-evenly g-0 mt-5">
+    <div class="col-3" *ngFor="let list of listOffers">
+      <div class="card-offer">
+        <h3 class="title">{{list.title}}</h3>
+        <p class="description">{{list.description}}</p>
+        <button class="btn btn-primary-bank custom">
+          Conoce más
+           <svg-icon src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
+          <span></span>
+        </button>
+        <div class="d-flex justify-contenter-center align-items-center mt-5">
+          <img class="img-card" [src]="list.url" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
