@@ -1,0 +1,66 @@
+@use "../../../assets/sass/base.scss" as *;
+
+.container-authorized-central-bank{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.img-bank-central{
+    max-width: 170px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.color-gray{
+    color: #aeaeae;
+}
+
+.btn-primary-bank{
+    width: 100%;
+    background-color: $color-primary;
+    border-radius: 16px;
+    height: 42px;
+    padding: 8px 16px;
+    font-size: 16px;
+    line-height: 26px;
+    color: white;
+}
+
+.card-offer{
+    height: 500px;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .title{
+        color: #000;
+        text-align: left;
+        font-size: 36px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .description{
+        font-family: 'Inter', sans-serif;
+        color: #0009;
+        font-size: 16px;
+    }
+
+    .img-card{
+        width: 240px;
+        max-height: 120px;
+        object-fit: contain;
+    }
+
+    .btn-primary-bank.custom{
+        width: 75%;
+        opacity: 0.4;
+        transition: ease-in-out 0.5s;
+    }
+
+    .btn-primary-bank.custom:hover{
+        opacity: 1;
+    }
+
+}

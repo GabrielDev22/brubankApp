@@ -37,13 +37,18 @@
     background-color: #4b38ad1a;
     border-radius: 16px;
     transition: ease-in-out 0.3s;
+
+    .router-text.color-primary{
+        color: $color-primary;
+    }
+
 }
 
 .router-content.background-router:hover{
     background-color: $color-primary;
 
-    .router-text{
-        color: white;
+    .router-text.color-primary{
+        color: white !important;
     }
 }
 
@@ -64,10 +69,6 @@
     color: $color-secondary;
     cursor: pointer;
     text-decoration: none;
-}
-
-.router-text.color-primary{
-    color: $color-primary;
 }
 
 .router-text.active{
