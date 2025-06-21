@@ -13,7 +13,7 @@
   </div>
 
   <div class="row justify-content-evenly g-0 mt-5">
-    <div class="col-3" *ngFor="let list of listOffers">
+    <div class="w-30" *ngFor="let list of listOffers">
       <div class="card-offer">
         <h3 class="title">{{list.title}}</h3>
         <p class="description">{{list.description}}</p>
@@ -31,10 +31,11 @@
   <!-- Section Brubank is very easy -->
 
   <section class="margin-top">
-    <h2 class="text-center">Con Brubank, es más fácil</h2>
+    <h2 class="text-center title">Con Brubank, es más fácil</h2>
 
-    <div class="d-flex justify-content-around align-items-center mt-4">
-      <div class="card-brubank loans">
+    <div class="d-flex justify-content-around mt-5">
+
+      <div class="card-brubank loans me-3">
         <h2 class="font-family-inter">Adelantos y préstamos</h2>
         <span>Obtené las mejores tasas y una acreditación inmediata dónde y cuándo quieras.</span>
         <div class="w-100 d-flex justify-content-between">
@@ -49,11 +50,131 @@
           </div>
         </div>
       </div>
-      <div class="card-brubank apply-cards border border-dark">
 
+      <div class="card-brubank apply-cards">
+        <h2 class="font-family-inter">Tarjetas sin complicaciones</h2>
+        <span>Pedí tus tarjetas de débito y crédito Visa Brubank y arrancá a disfrutar de todos sus beneficios.</span>
+        <div class="w-100 h-100 d-flex justify-content-end">
+          <div class="d-flex align-items-end mb-4">
+            <button class="btn btn-card dark">
+                Pedir tarjeta
+                <svg-icon class="ms-1" src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
+              </button>
+          </div>
+          <div class="container-image">
+            <img class="img-tarjeta" src="assets/media/authorized-central-bank/brubank-card.png" alt="" /> 
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- express transfer  -->
+
+  <section class="margin-top">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <span class="emoji">💸</span>
+      <h2 class="title-express-transfer">Transferencias express</h2>
+      <h5 class="color-gray-transference">Rápidas, seguras y personalizadas.</h5>
+        <div class="container-transfere-example" [ngClass]="{'loading' : loading, 'sendTransference' : sendTransference}">
+
+          <section class="d-flex justify-content-center" *ngIf="loading">
+            <span class="dot">.</span>
+            <span class="dot">.</span>
+            <span class="dot">.</span>
+          </section>
+
+          <section *ngIf="sendTransference">
+            <span>Enviando transferencia ...</span>
+          </section>
+
+          <section *ngIf="false">
+            <div class="">
+              <span></span>
+              <span>Lionel recibio tu transferencia</span>
+              <span>
+                Lionel vio tu transferencia 
+                <span>Hace 2 min.</span>
+              </span>
+            </div> 
+          </section>
+
+        </div>
+    </div>
+  </section>
+
+
+  <!--Receive immediate transferes  -->
+
+  <section class="mt-7">
+    <div class="container-receive-transferes">
+      <div class="h-100 row">
+        <div class="col-6 h-100 d-flex flex-column">
+          <h2 class="card-title">Recibí transferencias inmediatas</h2>
+          <div style="max-width: 300px;">
+            <span class="card-description">Con Brubank podés recibir transferencias de quien quieras, enterarte cuándo llegó y cuándo fue vista.</span>
+          </div>
+          <div class="w-75 d-flex mt-auto">
+            <button class="btn btn-primary-bank custom">
+              Hacer una transferencia
+             <svg-icon src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-6 h-100">
+          <div class="container-img-qr">
+            <img class="image-receive-qr"src="assets/media/presentation-bank/image-3.png" alt="">
+          </div>
+          <div class="h-100 position-relative">
+            <img class="image-receive"src="assets/media/presentation-bank/image-5.png" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <section class="mt-7">
+    <div class="row g-0">
+      <div class="col-6">
+        <div class="card-purple">
+          <h2 class="title-card-purple">Repartí sonrisas transfiriendo con GIFs</h2>
+          <div class="">
+            <video width="150px" height="150px" autoplay muted playsinline loop>
+              <source src="assets/media/video/videoOne.webm" type="video/webm">
+            </video>
+            
+            <video width="150px" height="150px" autoplay muted playsinline loop>
+              <source src="assets/media/video/videoFour.webm" type="video/webm">
+            </video>
+            
+            <div class="position-absolute">
+              <video width="150px" height="150px" autoplay muted playsinline loop>
+                <source src="assets/media/video/videoTwo.webm" type="video/webm">
+              </video>
+            </div>
+            
+            <div class="position-relative" style="left: 8.5rem; bottom: 1rem;">
+              <video width="150px" height="150px" autoplay muted playsinline loop>
+                <source src="assets/media/video/Bear.webm" type="video/webm">
+              </video>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card-box-shadow">
+          <h2 class="title-box-shadow">¿CBU en foto? Lo solucionamos</h2>
+          <div class="h-75 d-flex justify-content-center align-items-center">
+            <div class="mt-auto">
+              <img class="img-box-shadow" src="assets/media/authorized-central-bank/cbu.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div>

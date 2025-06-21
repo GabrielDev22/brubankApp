@@ -28,9 +28,19 @@ export class AuthorizedCentralBankComponent implements OnInit {
     }
   ];
 
+  loading : boolean = true;
+  sendTransference : boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setIntervalStyles(){
+    setInterval(() =>{
+      this.loading = !this.loading;
+      this.sendTransference = !this.sendTransference;
+    }, 1000);
   }
 
 }
