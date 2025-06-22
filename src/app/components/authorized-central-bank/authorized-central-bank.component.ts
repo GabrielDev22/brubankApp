@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
@@ -28,12 +28,28 @@ export class AuthorizedCentralBankComponent implements OnInit {
     }
   ];
 
+  images = [
+    'assets/media/authorized-central-bank/carrusel-1.webp',
+/*     'assets/media/authorized-central-bank/carrusel-2.webp',
+    'assets/media/authorized-central-bank/carrusel-3.webp',
+    'assets/media/authorized-central-bank/carrusel-4.webp' */
+  ]
+
   loading : boolean = true;
   sendTransference : boolean = false;
+  activeIndex : number = 0;
 
-  constructor() { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId : any
+  ) { }
 
   ngOnInit() {
+    if(isPlatformBrowser(this.platformId)){
+      setInterval(() => {
+        this.activeIndex = (this.activeIndex + 1) % this.images.length;
+        console.log(this.activeIndex);
+      }, 3000);
+    }
   }
 
   setIntervalStyles(){

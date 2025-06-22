@@ -301,3 +301,108 @@
     }
 
 }
+
+/* Secure Payments  */
+
+.content-payments-options{
+    display: flex;
+    height: 250px;
+    background-color: $color-primary;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 15px;
+    color: white !important;
+
+    h3{
+        font-size: 36px;
+        color: white;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    .img-qr{
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        mix-blend-mode: lighten;
+        border-radius: 20px;
+        animation: qrAnimations 1.5s infinite;
+        animation-delay: calc(var(--i) * 0.3s);
+    }
+
+    
+    .btn-card{
+        width: 50px;
+        background-color: $color-purple;
+        border-radius: 16px;
+        padding: 2px 4px;
+        font-size: 16px;
+        line-height: 26px;
+        color: white;
+        transition: ease-in-out 0.5s;
+    }
+
+    .btn-card.payments{
+        background-color: #ffffff0d;
+    }
+
+    .btn-card.payments:hover{
+        color: $color-primary;
+        background-color: #fff !important;
+    }
+
+   .carrusel-container {
+        width: 40%;
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid white;
+    }
+
+    .carrusel-inner {
+        display: flex;
+        justify-content: center;
+        transition: transform 0.8s ease-in-out;
+    }
+
+    .carrusel-img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+}
+
+@keyframes qrAnimations {
+
+    0%, 80%, 100%{
+        transform: scale(0.8);
+    }
+
+    40%{
+        transform: translateY(-5px);
+    }
+    
+}
+
+.content-payments{
+    width: 50%;
+    height: 515px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 40px;
+    border-radius: 30px;
+
+    .title-payments{
+        font-size: 36px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    .img-payments{
+        width: 340px;
+        height: 340px;
+        object-fit: contain;
+    }
+
+}

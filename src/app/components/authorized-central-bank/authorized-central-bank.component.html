@@ -39,7 +39,7 @@
         <h2 class="font-family-inter">Adelantos y préstamos</h2>
         <span>Obtené las mejores tasas y una acreditación inmediata dónde y cuándo quieras.</span>
         <div class="w-100 d-flex justify-content-between">
-          <div class="d-flex align-items-end mb-4">
+          <div class="d-flex align-items-end mb-5">
             <button class="btn btn-card purple">
                Conoce más
                <svg-icon class="ms-1" src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
@@ -55,8 +55,8 @@
         <h2 class="font-family-inter">Tarjetas sin complicaciones</h2>
         <span>Pedí tus tarjetas de débito y crédito Visa Brubank y arrancá a disfrutar de todos sus beneficios.</span>
         <div class="w-100 h-100 d-flex justify-content-end">
-          <div class="d-flex align-items-end mb-4">
-            <button class="btn btn-card dark">
+          <div class="d-flex align-items-end">
+            <button class="btn btn-card dark mb-1">
                 Pedir tarjeta
                 <svg-icon class="ms-1" src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
               </button>
@@ -176,5 +176,65 @@
       </div>
     </div>
   </section>
+
+  <!-- Secure Payments -->
+   <section class="mt-7">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <span class="emoji">🤑</span>
+      <h2 class="title-express-transfer">Pagos seguros</h2>
+      <h5 class="color-gray-transference">Simples, no Importa cúando ni dónde.</h5>
+    </div>
+
+    <div class="d-flex mt-7">
+      <div class="w-50 me-4">
+        <div class="content-payments-options">
+          <div class="d-flex">
+            <div class="w-50 h-100 d-flex flex-column">
+              <h3>QR rápido y sin contacto</h3>
+              <div class="mt-auto">
+                <button class="btn btn-card payments">
+                  <svg-icon class="ms-1" src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
+                </button>
+              </div>
+            </div>
+            <div class="w-50 d-flex justify-content-center">
+              <img class="img-qr" src="assets/media/authorized-central-bank/payments-qr.webp" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="content-payments-options p-0">
+           <div class="d-flex">
+            <div class="w-60 h-100 d-flex flex-column" style="padding: 40px;">
+              <h3>Girá la ruedita de premios</h3>
+            </div>
+            <div class="carrusel-container">
+              <div class="carrusel-inner" [style.transform]="'translateY(-' + activeIndex * 50 + '%)'">
+                <img *ngFor="let img of images" class="carrusel-img" [src]="img" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-payments p-0">
+        <div class="d-flex flex-column">
+          <div class="d-flex" style="padding: 40px;">
+            <h3 class="title-payments">Pagá todos tus servicios sin complicaciones 🏠</h3>
+          </div>
+          <div class="d-flex justify-content-end">
+            <div class="w-50 mt-auto">
+              <div style="padding: 40px;">
+                <button class="btn btn-primary-bank custom w-100">
+                  Conoce más
+                  <svg-icon src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
+                </button>
+              </div>
+            </div> 
+            <img class="img-payments" src="assets/media/authorized-central-bank/payments-options.webp" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </section>
 
 </div>
