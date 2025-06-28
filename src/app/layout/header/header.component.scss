@@ -2,12 +2,14 @@
 
 /* #83B6E2 Me gusto el color */
 
-
 .container-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    position: fixed;
+    background-color: #FFF;
+    z-index: 999;
 }
 
 .logo-header{
@@ -86,7 +88,7 @@
 .mega-menu-container{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 85%;
     top: 70px;
     left: 13%;
     border-radius: 15px;
@@ -147,7 +149,7 @@
 
     .content-extra:hover{
         background-color: $color-primary;
-        color: #FFF;
+        color: #FFF !important;
     }
 
     .content-extra.new{
@@ -161,6 +163,19 @@
 }
 
 .mega-menu-container.company{
-    width: 40%;
+    width: 60%;
     left: 30%;
+}
+
+
+@media (min-width: 1250px) {
+    .container-header{
+        width: 75%;
+    }
+}
+
+@media (min-width: 1900px) {
+    .container-header{
+        width: 60%;
+    }
 }

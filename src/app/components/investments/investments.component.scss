@@ -1,0 +1,139 @@
+@use "../../../assets/sass/base.scss" as *;
+
+.container-investments{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    .img-icon{
+        width: 50px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .title-investments{
+        color: #fff;
+        font-size: 36px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .description-investments{
+        color: #797979;
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+    }
+
+
+    .card-investments{
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
+        background-color: #1C1828;
+        padding: 40px;
+        border-radius: 40px;
+        position: relative;
+        overflow: hidden;
+
+        .title{
+            font-size: 36px;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            text-align: left;
+        }
+
+        .img-icon-card{
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            position: absolute;
+            top: 135px;
+            animation: dolarFlying 1.5s infinite;
+            animation-delay: calc(var(--i) * 0.3s);
+        }
+
+        .img-payment-receiveble{
+            width: 350px;
+            height: 150px;
+            object-fit: contain;
+            position: absolute;
+            top: 100px;
+            left: 300px;
+        }
+
+        .img-mutual-funds{
+            width: 400px;
+            height: 350px;
+            object-fit: contain;
+            left: 200px;
+            position: absolute;
+        }
+
+    }
+
+    .btn-investments{
+        font-size: 16px;
+        background-color: #343348;
+        color: #fff;
+        height: 42px;
+        border-radius: 16px;
+        padding: 8px 16px;
+        line-height: 26px;
+
+        &:hover{
+            background-color: #fff;
+            color: $color-purple;
+        }
+    }
+
+    .card-security{
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        border-radius: 40px;
+
+        .title{
+            font-size: 36px;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            text-align: left;
+        }
+
+        .description{
+            color: #fff9;
+            font-size: 18px;
+            font-family: 'Inter', sans-serif;
+            text-align: left;
+        }
+
+    }
+
+    .card-security.purple{
+        background-color: $color-purple;
+    }
+
+    .card-security.dark{
+        background-color: #343348;
+    }
+
+}
+
+
+
+
+@keyframes dolarFlying {
+    
+    0%, 80%, 100%{
+        transform: translateY(0);
+    }
+
+    40%{
+        transform: translateY(-5px);
+    }
+
+}
