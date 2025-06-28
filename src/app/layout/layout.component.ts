@@ -7,7 +7,7 @@ import { ContentComponent } from "./content/content.component";
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, ContentComponent],
+  imports: [CommonModule, ContentComponent],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
