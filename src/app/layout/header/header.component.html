@@ -1,28 +1,30 @@
 <div class="container-header">
-    <div class="brubank-logo">
-        <img class="logo-header" src="assets/media/logo/brubank-logo-letter.png" alt="">
-    </div>
-    <div class="router-content" [ngClass]="{'active' : true}" (mouseenter)="mouseEventSubMenu('enter', SubMenuItem.PERSONAS)" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
-        <a class="router-text">
-            Personas
-        </a>
-        <div *ngIf="this.showMegaMenu" [ngTemplateOutlet]="personalSubmenu"></div>
-    </div>
-    <div class="router-content" (mouseenter)="mouseEventSubMenu('enter', SubMenuItem.COMPANY)" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.PERSONAS)">
-        <a class="router-text">
-            Empresas
-        </a>
-        <div *ngIf="showMegaMenuCompany" [ngTemplateOutlet]="companySubMenu"></div>
-    </div>
-    <div class="router-content">
-        <a class="router-text">Ayuda</a>
-    </div>
-    <div class="router-content background-router">
-        <a class="router-text color-primary">Robo y extravío</a>
-    </div>
-    <div class="router-content">
-        <a class="router-text downloand me-1">Descargar app</a>
-        <span class="downloand-fill" [inlineSVG]="'assets/media/header/downloand.svg'"></span>
+    <div class="w-75 h-100 d-flex justify-content-between align-items-center">
+        <div class="brubank-logo">
+            <img class="logo-header" src="assets/media/logo/brubank-logo-letter.png" alt="">
+        </div>
+        <div class="router-content" [ngClass]="{'active' : true}" (mouseenter)="mouseEventSubMenu('enter', SubMenuItem.PERSONAS)" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.COMPANY)">
+            <a class="router-text">
+                Personas
+            </a>
+            <div *ngIf="this.showMegaMenu" [ngTemplateOutlet]="personalSubmenu"></div>
+        </div>
+        <div class="router-content" (mouseenter)="mouseEventSubMenu('enter', SubMenuItem.COMPANY)" (mouseleave)="mouseEventSubMenu('leave', SubMenuItem.PERSONAS)">
+            <a class="router-text">
+                Empresas
+            </a>
+            <div *ngIf="showMegaMenuCompany" [ngTemplateOutlet]="companySubMenu"></div>
+        </div>
+        <div class="router-content">
+            <a class="router-text">Ayuda</a>
+        </div>
+        <div class="router-content background-router">
+            <a class="router-text color-primary">Robo y extravío</a>
+        </div>
+        <div class="router-content">
+            <a class="router-text downloand me-1">Descargar app</a>
+            <span class="downloand-fill" [inlineSVG]="'assets/media/header/downloand.svg'"></span>
+        </div>
     </div>
 </div>
 
