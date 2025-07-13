@@ -1,5 +1,126 @@
 <div class="container">
-  <h1>
-    saving-money works!
-  </h1>
+  <div class="d-flex justify-content-center mt-10">
+    <h2 class="w-30 text-center">Con Brubank, ahorrá siempre</h2>
+  </div>
+
+  <div class="container-slider mt-5">
+    <div class="d-flex flex-column justify-content-between">
+      <div class="slides">
+        <div class="slider-line-wrapper">
+          <div *ngFor="let line of lines; let i = index" class="slider-line">
+            <div class="line-fill" [class.animated]="i === activeIndex" [style.width]="getLineWidth(i)"></div>
+          </div>
+        </div>
+        <span class="mt-5" style="color: #aeaeae80;">Hacé tap para continuar</span>
+      </div>
+      <div class="slides-text">
+        <h3 class="title-slides">{{slides[activeIndex].text}}</h3>
+        <div class="w-50">
+          <button class="btn btn-primary-bank">
+            Ir a todos los beneficios
+            <svg-icon src="assets/media/authorized-central-bank/arrow-right.svg"></svg-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="slide-image">
+      <img class="img-slider" [src]="slides[activeIndex].image" alt="" />
+    </div>
+  </div>
+
+  <div class="mt-20 mb-5">
+    <h2 class="text-center">Preguntas frecuentes</h2>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-4">
+      <div ngbAccordion class="mb-3 custom-accordion">
+        <div ngbAccordionItem class="custom-accordion-item">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton class="custom-accordion-button">¿Qué necesito para abrir una cuenta en Brubank?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="custom-accordion-body">
+              <ng-template>
+                <span>Para abrirte una cuenta en Brubank solo necesitás:</span>
+                <ul class="mt-3">
+                  <li>
+                    Un dispositivo móvil para descargarte la aplicación desde Apple Store o Play Store.
+                  </li>
+                  <li>
+                    Ser mayor de 13 años.
+                  </li>
+                  <li>
+                    Tener DNI argentino.
+                  </li>
+                  <li>
+                    Tener número de teléfono o celular argentino. 
+                  </li>
+                </ul>
+                <span class="mb-4">¡Y listo! Con tan solo esos requerimientos ya podés transformar tus finanzas.</span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ngbAccordion class="mb-3 custom-accordion">
+        <div ngbAccordionItem class="custom-accordion-item">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton class="custom-accordion-button">¿Qué beneficios tiene la tarjeta de Brubank?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="custom-accordion-body">
+              <ng-template>
+                <span>La tarjeta de débito VISA de Brubank te da varias facilidades. Entre ellas:</span>
+                <ul class="mt-3">
+                  <li>
+                    Descuentos en miles de comercios tales como Axion, Burger king, Farmacity, entre otros. 
+                  </li>
+                  <li>
+                    Pausarla y re activarla cada vez que quieras.
+                  </li>
+                  <li>
+                    Realizar compras en el exterior sin comisión.
+                  </li>
+                </ul>
+                <span>Además podés resolver cualquier consulta referida a tu tarjeta a través de nuestro soporte que es 24/7.</span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ngbAccordion class="mb-3 custom-accordion">
+        <div ngbAccordionItem class="custom-accordion-item">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton class="custom-accordion-button">¿Puedo pagar sin usar la tarjeta física de Brubank?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="custom-accordion-body">
+              <ng-template>
+                <span>¡Más vale que podés! Con tu tarjeta virtual de VISA débito, podés pagar directamente escaneando el QR del local. </span>
+                <span class="mb-4">Todos los QR de Mercado Pago, MODO y GetNet son válidos para hacer tus pagos con Brubank así que despreocupate por seguir llevando la billetera a todos lados y arrancá a hacer tus pagos con QR.</span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ngbAccordion class="mb-3 custom-accordion">
+        <div ngbAccordionItem class="custom-accordion-item">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton class="custom-accordion-button">¿Puedo pagar servicios desde la app?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="custom-accordion-body">
+              <ng-template>
+                <div class="mb-5">
+                  <span>¡Claro que sí! Desde la sección Servicios podés elegir la factura que querés pagar, ingresar tus datos para poder adherirla a tu cuenta y completar con el monto a pagar. </span>
+                </div>
+                <div class="mt-5">
+                  <span>Así de fácil podés pagar más de 5.000 servicios desde un mismo lugar.</span>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
