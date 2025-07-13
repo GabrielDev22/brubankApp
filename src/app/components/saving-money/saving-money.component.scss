@@ -82,5 +82,41 @@
         }
 
     }
-
 }
+
+ ::ng-deep .custom-accordion {
+        width: 900px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        .custom-accordion-item {
+            border: 1 solid #5656bd;
+            background-color: #efecff;
+        }
+    
+        .custom-accordion-button {
+            background-color: #efecff;
+            color: $color-primary;
+            font-weight: bold;
+            width: 100%;
+            height: 64px;
+            padding: 24px 32px;
+            border: 1 solid #5656bd;
+    
+            &:focus {
+                box-shadow: none;
+            }
+    
+            &::after {
+                filter: brightness(0) invert(1);
+            }
+        }
+    
+        .custom-accordion-body {
+            background-color: #efecff;;
+            color: $color-primary;
+            padding: 4px 32px 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+
