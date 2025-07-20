@@ -37,6 +37,9 @@ export class AuthorizedCentralBankComponent implements OnInit {
 
   loading : boolean = true;
   sendTransference : boolean = false;
+  transferReceived : boolean = false;
+  showSectionTransference : boolean = false;
+  showTransferReceivedChecked : boolean = false;
   activeIndex : number = 0;
 
   constructor(
@@ -45,18 +48,42 @@ export class AuthorizedCentralBankComponent implements OnInit {
 
   ngOnInit() {
     if(isPlatformBrowser(this.platformId)){
+      this.setIntervalStyles();
       setInterval(() => {
         this.activeIndex = (this.activeIndex + 1) % this.images.length;
-        console.log(this.activeIndex);
       }, 3000);
     }
   }
 
   setIntervalStyles(){
     setInterval(() =>{
-      this.loading = !this.loading;
-      this.sendTransference = !this.sendTransference;
-    }, 1000);
+      if(this.loading && this.sendTransference == false && this.transferReceived == false && this.showTransferReceivedChecked == false){
+        this.loading = false;
+        this.showSectionTransference = false;
+        this.sendTransference = true;
+        this.transferReceived = false;
+         this.showTransferReceivedChecked = false;
+      }else if(this.loading == false && this.sendTransference && this.transferReceived == false && this.showTransferReceivedChecked == false){
+        this.loading = false;
+        this.sendTransference = false;
+        this.showSectionTransference = true;
+        this.transferReceived = true;
+         this.showTransferReceivedChecked = false;
+      }else if(this.loading == false && this.sendTransference == false && this.transferReceived && this.showTransferReceivedChecked == false){
+        this.loading = false;
+        this.sendTransference = false;
+        this.transferReceived = false;
+        this.showSectionTransference = true;
+        this.showTransferReceivedChecked = true;
+      }else if(this.loading == false && this.sendTransference == false && this.transferReceived == false && this.showTransferReceivedChecked){
+        this.loading = true;
+        this.sendTransference = false;
+        this.transferReceived = false;
+        this.showSectionTransference = false;
+        this.showTransferReceivedChecked = false;
+      }
+      console.log("Se llama");
+    }, 3000);
   }
 
 }

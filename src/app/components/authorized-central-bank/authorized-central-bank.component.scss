@@ -113,6 +113,11 @@
         background-color: #343348 !important;
     }
 
+    .btn-card.dark:hover{
+        background-color: #FFF !important;
+        color: $color-purple;
+    }
+
     .img-card{
         width: 100%;
         height: 100%;
@@ -191,8 +196,53 @@
 }
 
 .container-transfere-example.sendTransference{
-    width: 300px;
+    width: 250px;
     padding: 12px;
+    text-align: center;
+}
+
+.container-transfere-example.transferReceived{
+    width: 350px;
+    padding: 10px;
+}
+
+.container-transfere-example.showTransferReceivedChecked{
+    width: 350px;
+    padding: 10px;
+}
+
+.content-transferReceived{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.show-content-transfer-checked{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    .svg-icon-color svg{
+        fill: blue;
+    }
+
+}
+
+.hour-transference{
+    color: #797979;
+    font-size: 13px;
+}
+
+
+::ng-deep .svg-icon-color svg{
+    width: 24px;
+    height: 28px;   
 }
 
 .dot:nth-child(1) { --i: 0; }

@@ -20,7 +20,7 @@ export class PresentationBankComponent implements OnInit {
      if(isPlatformBrowser(this.platformId)){
       setInterval(() => {
         this.animationSet();
-      }, 6000);
+      }, 5000);
     }
   }
 

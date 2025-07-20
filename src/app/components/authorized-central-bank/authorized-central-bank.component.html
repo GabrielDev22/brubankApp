@@ -77,7 +77,7 @@
       <span class="emoji">💸</span>
       <h2 class="title-express-transfer">Transferencias express</h2>
       <h5 class="color-gray-transference">Rápidas, seguras y personalizadas.</h5>
-        <div class="container-transfere-example" [ngClass]="{'loading' : loading, 'sendTransference' : sendTransference}">
+        <div class="container-transfere-example" [ngClass]="{'loading' : loading, 'sendTransference' : sendTransference, 'transferReceived' : transferReceived, 'showTransferReceivedChecked' : showTransferReceivedChecked}">
 
           <section class="d-flex justify-content-center" *ngIf="loading">
             <span class="dot">.</span>
@@ -89,13 +89,17 @@
             <span>Enviando transferencia ...</span>
           </section>
 
-          <section *ngIf="false">
-            <div class="">
-              <span></span>
-              <span>Lionel recibio tu transferencia</span>
-              <span>
-                Lionel vio tu transferencia 
-                <span>Hace 2 min.</span>
+          <section *ngIf="showSectionTransference">
+            <div class="d-flex justify-content-between">
+              <div class="content-transferReceived" *ngIf="transferReceived">
+                <svg-icon class="svg-icon-color" src="assets/media/authorized-central-bank/check-list.svg"></svg-icon>
+                <span>Lionel recibio tu transferencia</span>
+                <span class="hour-transference">Hace 1 min.</span>
+              </div>
+              <span class="show-content-transfer-checked" *ngIf="showTransferReceivedChecked">
+                 <svg-icon class="svg-icon-color" src="assets/media/authorized-central-bank/check-list.svg"></svg-icon>
+                 <span>Lionel vio tu transferencia </span>
+                 <span class="hour-transference">Hace 5 min.</span>
               </span>
             </div> 
           </section>
@@ -140,7 +144,7 @@
       <div class="col-6">
         <div class="card-purple">
           <h2 class="title-card-purple">Repartí sonrisas transfiriendo con GIFs</h2>
-          <div class="">
+          <div>
             <video width="150px" height="150px" autoplay muted playsinline loop>
               <source src="assets/media/video/videoOne.webm" type="video/webm">
             </video>
